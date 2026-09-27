@@ -1,0 +1,134 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * New Horizons design system — high-contrast dark theme.
+ * All color values use oklch. Semantic tokens only; never hardcode colors.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-cyan: var(--cyan);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.875rem;
+
+  --background: oklch(0.17 0.033 266);
+  --foreground: oklch(0.985 0.002 250);
+
+  --surface: oklch(0.225 0.038 266);
+  --surface-foreground: oklch(0.985 0.002 250);
+
+  --card: oklch(0.225 0.038 266);
+  --card-foreground: oklch(0.985 0.002 250);
+
+  --popover: oklch(0.225 0.038 266);
+  --popover-foreground: oklch(0.985 0.002 250);
+
+  --primary: oklch(0.852 0.176 91.5);
+  --primary-foreground: oklch(0.17 0.033 266);
+
+  --secondary: oklch(0.28 0.04 264);
+  --secondary-foreground: oklch(0.985 0.002 250);
+
+  --muted: oklch(0.28 0.04 264);
+  --muted-foreground: oklch(0.72 0.03 258);
+
+  --accent: oklch(0.852 0.176 91.5);
+  --accent-foreground: oklch(0.17 0.033 266);
+
+  --cyan: oklch(0.715 0.143 215.2);
+
+  --destructive: oklch(0.63 0.22 27);
+  --destructive-foreground: oklch(0.985 0.002 250);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.852 0.176 91.5);
+
+  --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--accent) 45%, transparent),
+    0 18px 50px -18px color-mix(in oklab, var(--accent) 45%, transparent);
+  --gradient-accent: linear-gradient(135deg, var(--accent), var(--cyan));
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.035em;
+  }
+}
+
+@utility glass {
+  background-color: color-mix(in oklab, var(--background) 65%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@utility glow-border {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  &:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in oklab, var(--accent) 60%, transparent);
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@utility text-gradient-accent {
+  background-image: var(--gradient-accent);
+  background-clip: text;
+  color: transparent;
+}
