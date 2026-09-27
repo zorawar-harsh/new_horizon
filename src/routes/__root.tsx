@@ -77,10 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "New Horizons" },
-      { name: "description", content: "Legal aid and reintegration support for people leaving prison." },
-      { name: "author", content: "New Horizons Foundation" },
+      { title: "Eco-Reform — Climate-Resilient Adaptive Prisons | TYCIA Foundation" },
+      {
+        name: "description",
+        content:
+          "Eco-Reform is TYCIA Foundation's flagship climate-resilience programme transforming prisons into climate-adaptive, sustainable and rehabilitative spaces. Piloted at Nuh District Jail, Haryana.",
+      },
+      { name: "author", content: "TYCIA Foundation • Project Eco-Reform" },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "Eco-Reform — Climate-Resilient Adaptive Prisons" },
+      {
+        property: "og:description",
+        content:
+          "Transforming prisons into climate-adaptive, sustainable and rehabilitative spaces with 30 climate actions at Nuh District Jail, Haryana.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -92,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,600&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
