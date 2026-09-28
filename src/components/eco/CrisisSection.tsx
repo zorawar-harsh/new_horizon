@@ -145,11 +145,12 @@ export function CrisisSection() {
           </Button>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2 mb-6">
+        {/* Filter Pills with Horizontal Touch Scroll on Mobile */}
+        <div className="flex items-center gap-2 mb-6 overflow-x-auto pb-1.5 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap no-scrollbar">
           <button
+            type="button"
             onClick={() => setFilter("all")}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all shrink-0 touch-manipulation ${
               filter === "all"
                 ? "bg-[#12560E] text-white shadow-xs"
                 : "bg-white text-[#5A6255] border border-[#E2DDD2] hover:bg-[#EBF4E8]"
@@ -158,8 +159,9 @@ export function CrisisSection() {
             All 6 Challenges
           </button>
           <button
+            type="button"
             onClick={() => setFilter("heat")}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all shrink-0 touch-manipulation ${
               filter === "heat"
                 ? "bg-[#12560E] text-white shadow-xs"
                 : "bg-white text-[#5A6255] border border-[#E2DDD2] hover:bg-[#EBF4E8]"
@@ -168,8 +170,9 @@ export function CrisisSection() {
             Heat & Weather
           </button>
           <button
+            type="button"
             onClick={() => setFilter("water")}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all shrink-0 touch-manipulation ${
               filter === "water"
                 ? "bg-[#12560E] text-white shadow-xs"
                 : "bg-white text-[#5A6255] border border-[#E2DDD2] hover:bg-[#EBF4E8]"
@@ -178,8 +181,9 @@ export function CrisisSection() {
             Water & Waste
           </button>
           <button
+            type="button"
             onClick={() => setFilter("infra")}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all shrink-0 touch-manipulation ${
               filter === "infra"
                 ? "bg-[#12560E] text-white shadow-xs"
                 : "bg-white text-[#5A6255] border border-[#E2DDD2] hover:bg-[#EBF4E8]"
@@ -190,7 +194,7 @@ export function CrisisSection() {
         </div>
 
         {/* 6 Minimal Block Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5">
           {filteredChallenges.map((item) => {
             const Icon = item.icon;
             const isExpanded = expandedIds.includes(item.id);
@@ -198,10 +202,10 @@ export function CrisisSection() {
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-3xl border border-[#E2DDD2] p-5 shadow-xs hover:border-[#A8CCA0] transition-all flex flex-col justify-between"
+                className="bg-white rounded-2xl sm:rounded-3xl border border-[#E2DDD2] p-4 sm:p-5 shadow-xs hover:border-[#A8CCA0] transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center justify-between mb-2.5 sm:mb-3">
                     <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-md bg-[#F4F3ED] text-[#5A6255]">
                       {item.tag}
                     </span>
@@ -210,7 +214,7 @@ export function CrisisSection() {
                     </div>
                   </div>
 
-                  <h3 className="font-extrabold text-base text-[#1A1C19] mb-1.5">
+                  <h3 className="font-extrabold text-sm sm:text-base text-[#1A1C19] mb-1 sm:mb-1.5">
                     {item.title}
                   </h3>
 
@@ -221,9 +225,9 @@ export function CrisisSection() {
 
                 <div>
                   {isExpanded && (
-                    <div className="p-3 rounded-2xl bg-[#EBF4E8] border border-[#CDE5C2] space-y-1 mb-2 animate-in fade-in-50 duration-200">
+                    <div className="p-3 rounded-2xl bg-[#EBF4E8] border border-[#CDE5C2] space-y-1 mb-2.5 animate-in fade-in-50 duration-200">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-[#12560E]">
-                        <Sparkles className="size-3 text-[#52A638]" />
+                        <Sparkles className="size-3 text-[#52A638] shrink-0" />
                         <span>{item.solutionTitle}</span>
                       </div>
                       <p className="text-[11px] font-bold text-[#12560E]">
@@ -235,7 +239,7 @@ export function CrisisSection() {
                   <button
                     type="button"
                     onClick={() => toggleExpand(item.id)}
-                    className="w-full py-1.5 px-3 rounded-xl bg-[#FAF9F5] hover:bg-[#EBF4E8] text-[#12560E] text-xs font-bold flex items-center justify-center gap-1.5 transition-colors border border-[#E2DDD2]"
+                    className="w-full min-h-[38px] py-2 px-3 rounded-xl bg-[#FAF9F5] hover:bg-[#EBF4E8] text-[#12560E] text-xs font-bold flex items-center justify-center gap-1.5 transition-colors border border-[#E2DDD2] touch-manipulation"
                   >
                     <span>{isExpanded ? "Hide Intervention" : "Inspect Solution"}</span>
                     {isExpanded ? (

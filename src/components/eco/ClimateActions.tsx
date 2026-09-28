@@ -508,11 +508,12 @@ export function ClimateActions() {
           </div>
         </div>
 
-        {/* Category Selector Pills */}
-        <div className="flex flex-wrap items-center gap-2 mb-6">
+        {/* Category Selector Pills with Horizontal Touch Scroll */}
+        <div className="flex items-center gap-2 mb-6 overflow-x-auto pb-1.5 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap no-scrollbar">
           <button
+            type="button"
             onClick={() => setSelectedCategory("all")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all shrink-0 touch-manipulation ${
               selectedCategory === "all"
                 ? "bg-[#12560E] text-white shadow-xs"
                 : "bg-[#FAF9F5] text-[#5A6255] border border-[#E2DDD2] hover:bg-white"
@@ -521,8 +522,9 @@ export function ClimateActions() {
             All 30 Actions
           </button>
           <button
+            type="button"
             onClick={() => setSelectedCategory("infrastructure")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all shrink-0 touch-manipulation ${
               selectedCategory === "infrastructure"
                 ? "bg-[#12560E] text-white shadow-xs"
                 : "bg-[#FAF9F5] text-[#5A6255] border border-[#E2DDD2] hover:bg-white"
@@ -531,8 +533,9 @@ export function ClimateActions() {
             Infrastructure (6)
           </button>
           <button
+            type="button"
             onClick={() => setSelectedCategory("water")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all shrink-0 touch-manipulation ${
               selectedCategory === "water"
                 ? "bg-[#12560E] text-white shadow-xs"
                 : "bg-[#FAF9F5] text-[#5A6255] border border-[#E2DDD2] hover:bg-white"
@@ -541,8 +544,9 @@ export function ClimateActions() {
             Water (6)
           </button>
           <button
+            type="button"
             onClick={() => setSelectedCategory("waste")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all shrink-0 touch-manipulation ${
               selectedCategory === "waste"
                 ? "bg-[#12560E] text-white shadow-xs"
                 : "bg-[#FAF9F5] text-[#5A6255] border border-[#E2DDD2] hover:bg-white"
@@ -551,8 +555,9 @@ export function ClimateActions() {
             Waste (6)
           </button>
           <button
+            type="button"
             onClick={() => setSelectedCategory("green")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all shrink-0 touch-manipulation ${
               selectedCategory === "green"
                 ? "bg-[#12560E] text-white shadow-xs"
                 : "bg-[#FAF9F5] text-[#5A6255] border border-[#E2DDD2] hover:bg-white"
@@ -561,8 +566,9 @@ export function ClimateActions() {
             Green Practices (6)
           </button>
           <button
+            type="button"
             onClick={() => setSelectedCategory("education")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all shrink-0 touch-manipulation ${
               selectedCategory === "education"
                 ? "bg-[#12560E] text-white shadow-xs"
                 : "bg-[#FAF9F5] text-[#5A6255] border border-[#E2DDD2] hover:bg-white"
@@ -573,7 +579,7 @@ export function ClimateActions() {
         </div>
 
         {/* Search */}
-        <div className="mb-6 max-w-sm">
+        <div className="mb-6 w-full max-w-sm">
           <div className="relative">
             <Search className="size-4 text-[#7A8275] absolute left-3 top-1/2 -translate-y-1/2" />
             <input
@@ -581,17 +587,17 @@ export function ClimateActions() {
               placeholder="Filter actions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-xl border border-[#E2DDD2] bg-[#FAF9F5] text-xs text-[#1A1C19] placeholder-[#7A8275] focus:outline-none focus:ring-1 focus:ring-[#12560E]"
+              className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-[#E2DDD2] bg-[#FAF9F5] text-xs text-[#1A1C19] placeholder-[#7A8275] focus:outline-none focus:ring-1 focus:ring-[#12560E]"
             />
           </div>
         </div>
 
         {/* 30 Actions Minimal Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
           {filteredActions.map((action) => (
             <div
               key={action.id}
-              className="p-5 rounded-3xl bg-white border border-[#E2DDD2] hover:border-[#A8CCA0] transition-all flex flex-col justify-between shadow-xs"
+              className="p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-white border border-[#E2DDD2] hover:border-[#A8CCA0] transition-all flex flex-col justify-between shadow-xs"
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
@@ -613,7 +619,7 @@ export function ClimateActions() {
               </div>
 
               <div>
-                <div className="p-2.5 rounded-2xl bg-[#FAF9F5] border border-[#E2DDD2] mb-3 text-[11px] font-bold text-[#12560E] flex items-center gap-1.5">
+                <div className="p-2.5 rounded-xl bg-[#FAF9F5] border border-[#E2DDD2] mb-3 text-[11px] font-bold text-[#12560E] flex items-center gap-1.5">
                   <TrendingUp className="size-3.5 text-[#52A638] shrink-0" />
                   <span className="truncate">{action.impactMetric}</span>
                 </div>
@@ -621,10 +627,10 @@ export function ClimateActions() {
                 <button
                   type="button"
                   onClick={() => setActiveSopAction(action)}
-                  className="text-xs font-bold text-[#12560E] hover:underline flex items-center gap-1"
+                  className="w-full min-h-[36px] py-1.5 px-3 rounded-xl bg-[#FAF9F5] hover:bg-[#EBF4E8] text-xs font-bold text-[#12560E] flex items-center justify-center gap-1 transition-colors border border-[#E2DDD2] touch-manipulation"
                 >
                   <span>View Field SOP</span>
-                  <ArrowRight className="size-3" />
+                  <ArrowRight className="size-3 shrink-0" />
                 </button>
               </div>
             </div>
@@ -635,7 +641,7 @@ export function ClimateActions() {
       {/* SOP Dialog Modal */}
       {activeSopAction && (
         <Dialog open={!!activeSopAction} onOpenChange={() => setActiveSopAction(null)}>
-          <DialogContent className="max-w-md border-[#E2DDD2] bg-[#FAF9F5] p-5">
+          <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-md border-[#E2DDD2] bg-[#FAF9F5] p-4 sm:p-5 rounded-2xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-xs font-extrabold text-[#12560E] bg-[#EBF4E8] px-2 py-0.5 rounded-md">
@@ -645,7 +651,7 @@ export function ClimateActions() {
                   {activeSopAction.categoryLabel}
                 </span>
               </div>
-              <DialogTitle className="text-lg font-extrabold text-[#1A1C19]">
+              <DialogTitle className="text-base sm:text-lg font-extrabold text-[#1A1C19]">
                 {activeSopAction.title}
               </DialogTitle>
               <DialogDescription className="text-xs text-[#5A6255]">
@@ -668,11 +674,11 @@ export function ClimateActions() {
                   SOP Steps:
                 </h4>
                 {activeSopAction.sopSteps.map((step, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-xs text-[#3A4036] bg-white p-2 rounded-xl border border-[#E2DDD2]">
-                    <span className="size-4 rounded-full bg-[#EBF4E8] text-[#12560E] font-black text-[10px] flex items-center justify-center shrink-0">
+                  <div key={idx} className="flex items-start gap-2 text-xs text-[#3A4036] bg-white p-2 sm:p-2.5 rounded-xl border border-[#E2DDD2]">
+                    <span className="size-4 rounded-full bg-[#EBF4E8] text-[#12560E] font-black text-[10px] flex items-center justify-center shrink-0 mt-0.5">
                       {idx + 1}
                     </span>
-                    <span>{step}</span>
+                    <span className="leading-snug">{step}</span>
                   </div>
                 ))}
               </div>
@@ -681,9 +687,9 @@ export function ClimateActions() {
                 <Button
                   size="sm"
                   onClick={() => setActiveSopAction(null)}
-                  className="bg-[#12560E] text-white text-xs font-bold h-8 px-4 rounded-lg"
+                  className="w-full sm:w-auto bg-[#12560E] hover:bg-[#0D3F0A] text-white text-xs font-bold h-9 px-5 rounded-xl touch-manipulation"
                 >
-                  Close
+                  Close SOP
                 </Button>
               </div>
             </div>

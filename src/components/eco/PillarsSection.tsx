@@ -9,23 +9,24 @@ export function PillarsSection() {
     <section id="pathways" className="py-14 md:py-20 bg-[#FAF9F5] border-t border-[#E2DDD2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header with Switcher */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-10">
           <div className="max-w-2xl space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF4E8] text-[#12560E] text-xs font-bold uppercase tracking-wider">
               Three Pillars & Scale
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#1A1C19] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1A1C19] tracking-tight">
               Holistic Action Model
             </h2>
-            <p className="text-sm sm:text-base text-[#5A6255]">
+            <p className="text-xs sm:text-base text-[#5A6255]">
               Targeting heat relief, decentralized water/waste circularity, and accredited vocational skills.
             </p>
           </div>
 
-          <div className="p-1 rounded-xl bg-white border border-[#E2DDD2] flex items-center shadow-xs self-start md:self-auto">
+          <div className="p-1 rounded-xl bg-white border border-[#E2DDD2] flex items-center shadow-xs self-start md:self-auto w-full sm:w-auto">
             <button
+              type="button"
               onClick={() => setTab("pillars")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+              className={`flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg text-xs font-bold transition-all text-center touch-manipulation ${
                 tab === "pillars"
                   ? "bg-[#12560E] text-white shadow-xs"
                   : "text-[#5A6255] hover:text-[#1A1C19]"
@@ -34,8 +35,9 @@ export function PillarsSection() {
               Three Core Pillars
             </button>
             <button
+              type="button"
               onClick={() => setTab("pathway")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+              className={`flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg text-xs font-bold transition-all text-center touch-manipulation ${
                 tab === "pathway"
                   ? "bg-[#12560E] text-white shadow-xs"
                   : "text-[#5A6255] hover:text-[#1A1C19]"
@@ -48,9 +50,9 @@ export function PillarsSection() {
 
         {/* Tab 1: Three Pillars */}
         {tab === "pillars" ? (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5">
             {/* Pillar I */}
-            <div className="p-6 rounded-3xl bg-white border border-[#E2DDD2] shadow-xs flex flex-col justify-between hover:border-[#A8CCA0] transition-all">
+            <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-[#E2DDD2] shadow-xs flex flex-col justify-between hover:border-[#A8CCA0] transition-all">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#12560E] bg-[#EBF4E8] px-2 py-0.5 rounded-md">
@@ -61,7 +63,7 @@ export function PillarsSection() {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-black text-[#1A1C19]">
+                <h3 className="text-base sm:text-lg font-black text-[#1A1C19]">
                   Resilient Infrastructure
                 </h3>
 
@@ -86,18 +88,18 @@ export function PillarsSection() {
                   asChild
                   variant="outline"
                   size="sm"
-                  className="w-full border-[#CDE5C2] text-[#12560E] hover:bg-[#EBF4E8] font-bold text-xs h-9 rounded-xl"
+                  className="w-full border-[#CDE5C2] text-[#12560E] hover:bg-[#EBF4E8] font-bold text-xs h-10 sm:h-9 rounded-xl touch-manipulation"
                 >
                   <a href="#donate" className="flex items-center justify-center gap-1.5">
                     <span>Support Pillar</span>
-                    <ArrowRight className="size-3" />
+                    <ArrowRight className="size-3 shrink-0" />
                   </a>
                 </Button>
               </div>
             </div>
 
             {/* Pillar II */}
-            <div className="p-6 rounded-3xl bg-white border border-[#E2DDD2] shadow-xs flex flex-col justify-between hover:border-[#A8CCA0] transition-all">
+            <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-[#E2DDD2] shadow-xs flex flex-col justify-between hover:border-[#A8CCA0] transition-all">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#12560E] bg-[#EBF4E8] px-2 py-0.5 rounded-md">
@@ -108,7 +110,7 @@ export function PillarsSection() {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-black text-[#1A1C19]">
+                <h3 className="text-base sm:text-lg font-black text-[#1A1C19]">
                   Water & Circular Waste
                 </h3>
 
@@ -133,18 +135,18 @@ export function PillarsSection() {
                   asChild
                   variant="outline"
                   size="sm"
-                  className="w-full border-[#CDE5C2] text-[#12560E] hover:bg-[#EBF4E8] font-bold text-xs h-9 rounded-xl"
+                  className="w-full border-[#CDE5C2] text-[#12560E] hover:bg-[#EBF4E8] font-bold text-xs h-10 sm:h-9 rounded-xl touch-manipulation"
                 >
                   <a href="#donate" className="flex items-center justify-center gap-1.5">
                     <span>Support Pillar</span>
-                    <ArrowRight className="size-3" />
+                    <ArrowRight className="size-3 shrink-0" />
                   </a>
                 </Button>
               </div>
             </div>
 
             {/* Pillar III */}
-            <div className="p-6 rounded-3xl bg-white border border-[#E2DDD2] shadow-xs flex flex-col justify-between hover:border-[#A8CCA0] transition-all">
+            <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-[#E2DDD2] shadow-xs flex flex-col justify-between hover:border-[#A8CCA0] transition-all">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#12560E] bg-[#EBF4E8] px-2 py-0.5 rounded-md">
@@ -155,7 +157,7 @@ export function PillarsSection() {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-black text-[#1A1C19]">
+                <h3 className="text-base sm:text-lg font-black text-[#1A1C19]">
                   Wellbeing & Vocational Skills
                 </h3>
 
@@ -180,19 +182,19 @@ export function PillarsSection() {
                   asChild
                   variant="outline"
                   size="sm"
-                  className="w-full border-[#CDE5C2] text-[#12560E] hover:bg-[#EBF4E8] font-bold text-xs h-9 rounded-xl"
+                  className="w-full border-[#CDE5C2] text-[#12560E] hover:bg-[#EBF4E8] font-bold text-xs h-10 sm:h-9 rounded-xl touch-manipulation"
                 >
                   <a href="#donate" className="flex items-center justify-center gap-1.5">
                     <span>Support Pillar</span>
-                    <ArrowRight className="size-3" />
+                    <ArrowRight className="size-3 shrink-0" />
                   </a>
                 </Button>
               </div>
             </div>
           </div>
         ) : (
-          <div className="p-6 rounded-3xl bg-white border border-[#E2DDD2] shadow-xs">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+          <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-[#E2DDD2] shadow-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 text-xs">
               <div className="space-y-1">
                 <span className="font-extrabold text-[#12560E] uppercase tracking-wider block">
                   Step 01 • Diagnostic Audit

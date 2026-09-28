@@ -56,33 +56,33 @@ export function ModelSection() {
     <section id="model" className="py-14 md:py-20 bg-white border-t border-[#E2DDD2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header Block */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 sm:gap-6 mb-8 sm:mb-12">
           <div className="max-w-2xl space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF4E8] text-[#12560E] text-xs font-bold uppercase tracking-wider">
               TYCIA Foundation Flagship
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#1A1C19] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1A1C19] tracking-tight">
               Research-to-Action Protocol
             </h2>
-            <p className="text-sm sm:text-base text-[#5A6255]">
+            <p className="text-xs sm:text-base text-[#5A6255]">
               Can prisons become part of the climate solution? Piloting practical custodial resilience at Nuh District Jail, Haryana.
             </p>
           </div>
 
           <Button
             asChild
-            className="bg-[#12560E] hover:bg-[#0D3F0A] text-white font-bold text-xs h-11 px-5 rounded-xl self-start lg:self-auto"
+            className="w-full sm:w-auto bg-[#12560E] hover:bg-[#0D3F0A] text-white font-bold text-xs h-11 px-5 rounded-xl self-start lg:self-auto justify-center"
           >
-            <a href="#facility-blueprint" className="flex items-center gap-2">
-              <Compass className="size-4" />
+            <a href="#facility-blueprint" className="flex items-center justify-center gap-2">
+              <Compass className="size-4 shrink-0" />
               <span>Inspect Compound Blueprint</span>
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-4 shrink-0" />
             </a>
           </Button>
         </div>
 
         {/* 5 Compact Stage Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
           {stages.map((stage, idx) => {
             const Icon = stage.icon;
             const isSelected = activeStage === idx;
@@ -91,9 +91,9 @@ export function ModelSection() {
               <div
                 key={stage.phase}
                 onClick={() => setActiveStage(idx)}
-                className={`cursor-pointer p-5 rounded-3xl border transition-all duration-200 flex flex-col justify-between ${
+                className={`cursor-pointer p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all duration-200 flex flex-col justify-between touch-manipulation ${
                   isSelected
-                    ? "bg-[#EBF4E8] border-[#12560E] shadow-xs"
+                    ? "bg-[#EBF4E8] border-[#12560E] shadow-xs ring-1 ring-[#12560E]/20"
                     : "bg-[#FAF9F5] border-[#E2DDD2] hover:bg-white hover:border-[#A8CCA0]"
                 }`}
               >

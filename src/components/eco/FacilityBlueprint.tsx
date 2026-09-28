@@ -160,12 +160,12 @@ export function FacilityBlueprint() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
           {/* Schematic SVG Canvas Container */}
           <div className="lg:col-span-8 bg-[#182613] rounded-3xl p-4 sm:p-5 text-white border border-[#2A3E24] shadow-md relative overflow-hidden">
-            <div className="flex items-center justify-between mb-3 text-[11px] font-mono">
-              <span className="text-[#B9F079] bg-white/10 px-2 py-0.5 rounded-md">
+            <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 mb-3 text-[10px] sm:text-[11px] font-mono">
+              <span className="text-[#B9F079] bg-white/10 px-2 py-0.5 rounded-md self-start xs:self-auto">
                 Lat 28.107° N, Long 77.004° E
               </span>
-              <span className="text-white/70 font-sans font-bold">
-                {mode === "2025" ? "2025 Eco-Interventions" : "2023 Baseline (High Thermal Load)"}
+              <span className="text-white/70 font-sans font-bold text-xs truncate">
+                {mode === "2025" ? "2025 Eco-Interventions" : "2023 Baseline (High Thermal)"}
               </span>
             </div>
 
@@ -192,18 +192,19 @@ export function FacilityBlueprint() {
                     type="button"
                     onClick={() => setSelectedHotspot(hotspot)}
                     style={{ left: `${hotspot.coords.x}%`, top: `${hotspot.coords.y}%` }}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 z-20 group focus:outline-none"
+                    className="absolute -translate-x-1/2 -translate-y-1/2 z-20 group focus:outline-none touch-manipulation"
+                    aria-label={`Select ${hotspot.name}`}
                   >
                     <div className="relative flex items-center justify-center">
-                      <span className="animate-ping absolute inline-flex h-7 w-7 rounded-full bg-[#B9F079] opacity-40" />
+                      <span className="animate-ping absolute inline-flex h-6 w-6 sm:h-7 sm:w-7 rounded-full bg-[#B9F079] opacity-40" />
                       <div
-                        className={`size-8 sm:size-9 rounded-full flex items-center justify-center transition-all border-2 ${
+                        className={`size-7 sm:size-9 rounded-full flex items-center justify-center transition-all border-2 ${
                           isSelected
                             ? "bg-[#B9F079] text-[#12560E] border-white scale-110 shadow-lg"
                             : "bg-[#12560E] text-[#B9F079] border-[#B9F079]/70 hover:scale-105"
                         }`}
                       >
-                        <Icon className="size-4" />
+                        <Icon className="size-3.5 sm:size-4" />
                       </div>
                     </div>
                   </button>
@@ -211,14 +212,14 @@ export function FacilityBlueprint() {
               })}
             </div>
 
-            {/* Quick Strip */}
-            <div className="flex flex-wrap items-center gap-1.5 pt-1">
-              <span className="text-xs text-white/60 font-semibold mr-1">Tap:</span>
+            {/* Quick Strip with Touch Scroll on Mobile */}
+            <div className="flex items-center gap-1.5 pt-1 overflow-x-auto pb-1 no-scrollbar sm:flex-wrap">
+              <span className="text-xs text-white/60 font-semibold mr-1 shrink-0">Tap:</span>
               {hotspots.map((h) => (
                 <button
                   key={h.id}
                   onClick={() => setSelectedHotspot(h)}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 touch-manipulation ${
                     selectedHotspot.id === h.id
                       ? "bg-[#B9F079] text-[#12560E]"
                       : "bg-white/10 text-white/80 hover:bg-white/20"
@@ -231,7 +232,7 @@ export function FacilityBlueprint() {
           </div>
 
           {/* Compact Inspector Card */}
-          <div className="lg:col-span-4 bg-white p-5 sm:p-6 rounded-3xl border border-[#E2DDD2] shadow-xs space-y-3">
+          <div className="lg:col-span-4 bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-[#E2DDD2] shadow-xs space-y-3">
             <div className="flex items-center justify-between pb-2 border-b border-[#F0EDE4]">
               <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#12560E] bg-[#EBF4E8] px-2 py-0.5 rounded-md">
                 {selectedHotspot.tag}

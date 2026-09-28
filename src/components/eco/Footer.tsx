@@ -65,34 +65,40 @@ export function Footer() {
                 Receive policy briefs, agroecology field notes, and constitutional updates.
               </p>
 
-              <form onSubmit={handleSubscribe} className="flex gap-2">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
                   required
                   placeholder="Enter email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#B9F079]"
+                  className="flex-1 px-3 py-2 rounded-xl bg-white/10 border border-white/15 text-xs text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#B9F079]"
                 />
                 <Button
                   type="submit"
                   size="sm"
-                  className="bg-[#B9F079] hover:bg-[#A6DE66] text-[#12560E] font-bold text-xs h-9 px-3 rounded-xl"
+                  className="bg-[#B9F079] hover:bg-[#A6DE66] text-[#12560E] font-bold text-xs h-10 sm:h-9 px-4 rounded-xl touch-manipulation justify-center"
                 >
                   {subscribed ? <Check className="size-3.5" /> : "Join"}
                 </Button>
               </form>
 
               <div className="pt-2 text-xs text-white/70 space-y-1">
-                <p>Contact: <a href="mailto:tyciafoundation@gmail.com" className="text-[#B9F079] hover:underline font-semibold">tyciafoundation@gmail.com</a> • +91 880573488</p>
+                <p className="break-words">
+                  Contact:{" "}
+                  <a href="mailto:tyciafoundation@gmail.com" className="text-[#B9F079] hover:underline font-semibold break-all">
+                    tyciafoundation@gmail.com
+                  </a>{" "}
+                  • +91 880573488
+                </p>
                 <p className="text-[11px] text-white/50">N-33, 2nd Floor, Green Park Ext., New Delhi</p>
               </div>
             </div>
           </div>
 
           {/* Bottom Copyright & Legal Links */}
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/60">
-            <p className="text-center sm:text-left">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/60 text-center sm:text-left">
+            <p>
               © 2015–2026 TYCIA Foundation (Turn Your Concern Into Action). Reg. TYCIA/NGO/2015/04821.
             </p>
 

@@ -82,13 +82,13 @@ export function DonateSection() {
         </div>
 
         {/* 4 Tiers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 mb-8 sm:mb-12">
           {tiers.map((t) => (
             <div
               key={t.id}
-              className={`p-5 rounded-3xl border transition-all flex flex-col justify-between ${
+              className={`p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all flex flex-col justify-between ${
                 t.isCritical
-                  ? "bg-white border-[#12560E] ring-2 ring-[#12560E]/10 shadow-sm"
+                  ? "bg-white border-[#12560E] ring-2 ring-[#12560E]/15 shadow-sm"
                   : "bg-white border-[#E2DDD2] hover:border-[#A8CCA0] shadow-xs"
               }`}
             >
@@ -114,7 +114,7 @@ export function DonateSection() {
               </div>
 
               <div>
-                <div className="p-2 rounded-xl bg-[#FAF9F5] border border-[#E2DDD2] mb-3 text-[11px] font-bold text-[#12560E] flex items-center gap-1.5">
+                <div className="p-2.5 rounded-xl bg-[#FAF9F5] border border-[#E2DDD2] mb-3 text-[11px] font-bold text-[#12560E] flex items-center gap-1.5">
                   <CheckCircle2 className="size-3.5 text-[#52A638] shrink-0" />
                   <span className="truncate">{t.deliverable}</span>
                 </div>
@@ -122,7 +122,7 @@ export function DonateSection() {
                 <Button
                   size="sm"
                   onClick={() => setCalculatorAmount(t.numericAmount)}
-                  className={`w-full text-xs font-bold h-9 rounded-xl ${
+                  className={`w-full text-xs font-bold h-10 rounded-xl touch-manipulation ${
                     t.isCritical
                       ? "bg-[#12560E] hover:bg-[#0D3F0A] text-white"
                       : "bg-[#FAF9F5] hover:bg-[#EBF4E8] text-[#12560E] border border-[#E2DDD2]"
@@ -136,14 +136,14 @@ export function DonateSection() {
         </div>
 
         {/* Live Calculator & Bank Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start">
           {/* Calculator Card */}
-          <div className="lg:col-span-7 bg-white p-6 rounded-3xl border border-[#E2DDD2] shadow-xs space-y-5">
+          <div className="lg:col-span-7 bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-[#E2DDD2] shadow-xs space-y-4 sm:space-y-5">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#12560E] uppercase tracking-wider">
-                <Calculator className="size-4" /> Live Impact Calculator
+              <div className="flex items-center gap-1.5 sm:gap-2 text-xs font-bold text-[#12560E] uppercase tracking-wider">
+                <Calculator className="size-4 shrink-0" /> Live Impact Calculator
               </div>
-              <span className="text-2xl font-black text-[#12560E]">
+              <span className="text-xl sm:text-2xl font-black text-[#12560E]">
                 ₹{calculatorAmount.toLocaleString("en-IN")}
               </span>
             </div>
@@ -155,16 +155,17 @@ export function DonateSection() {
               step="500"
               value={calculatorAmount}
               onChange={(e) => setCalculatorAmount(Number(e.target.value))}
-              className="w-full h-2 bg-[#E2DDD2] rounded-lg appearance-none cursor-pointer accent-[#12560E]"
+              className="w-full h-2.5 bg-[#E2DDD2] rounded-lg appearance-none cursor-pointer accent-[#12560E] touch-manipulation"
             />
 
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
               <span className="text-xs text-[#7A8275] font-semibold mr-1">Presets:</span>
               {presets.map((preset) => (
                 <button
                   key={preset}
+                  type="button"
                   onClick={() => setCalculatorAmount(preset)}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all touch-manipulation ${
                     calculatorAmount === preset
                       ? "bg-[#12560E] text-white shadow-xs"
                       : "bg-[#FAF9F5] text-[#5A6255] border border-[#E2DDD2] hover:bg-[#EBF4E8]"
@@ -176,33 +177,33 @@ export function DonateSection() {
             </div>
 
             {/* Calculated Metrics */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-2">
               <div className="p-3 rounded-2xl bg-[#FAF9F5] border border-[#E2DDD2]">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#5A6255] block">
                   Cool Roof
                 </span>
-                <p className="text-base font-black text-[#12560E] mt-0.5">{coolRoofArea} sq ft</p>
+                <p className="text-sm sm:text-base font-black text-[#12560E] mt-0.5 truncate">{coolRoofArea} sq ft</p>
               </div>
 
               <div className="p-3 rounded-2xl bg-[#FAF9F5] border border-[#E2DDD2]">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#5A6255] block">
                   Garden Beds
                 </span>
-                <p className="text-base font-black text-[#12560E] mt-0.5">{agroecologyBeds} sq ft</p>
+                <p className="text-sm sm:text-base font-black text-[#12560E] mt-0.5 truncate">{agroecologyBeds} sq ft</p>
               </div>
 
               <div className="p-3 rounded-2xl bg-[#FAF9F5] border border-[#E2DDD2]">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#5A6255] block">
                   Training
                 </span>
-                <p className="text-base font-black text-[#12560E] mt-0.5">{ecoTrainingHours} hrs</p>
+                <p className="text-sm sm:text-base font-black text-[#12560E] mt-0.5 truncate">{ecoTrainingHours} hrs</p>
               </div>
 
               <div className="p-3 rounded-2xl bg-[#FAF9F5] border border-[#E2DDD2]">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#5A6255] block">
-                  80G Exemption
+                  80G Relief
                 </span>
-                <p className="text-base font-black text-[#12560E] mt-0.5">
+                <p className="text-sm sm:text-base font-black text-[#12560E] mt-0.5 truncate">
                   ₹{taxExemption.toLocaleString("en-IN")}
                 </p>
               </div>
@@ -210,15 +211,15 @@ export function DonateSection() {
           </div>
 
           {/* Direct Bank Details */}
-          <div className="lg:col-span-5 bg-[#12560E] text-white p-6 rounded-3xl shadow-xs space-y-4">
+          <div className="lg:col-span-5 bg-[#12560E] text-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-xs space-y-4">
             <div className="flex items-center justify-between border-b border-white/15 pb-2">
               <div className="flex items-center gap-2">
-                <Landmark className="size-4 text-[#B9F079]" />
+                <Landmark className="size-4 text-[#B9F079] shrink-0" />
                 <span className="text-xs font-bold uppercase tracking-wider">
                   Statutory Trust Bank Details
                 </span>
               </div>
-              <span className="text-[10px] text-[#B9F079] font-bold">80G Certified</span>
+              <span className="text-[10px] text-[#B9F079] font-bold shrink-0">80G Certified</span>
             </div>
 
             <div className="space-y-2 text-xs">
@@ -228,8 +229,10 @@ export function DonateSection() {
                   <span className="font-mono font-bold text-sm text-white">38491029482</span>
                 </div>
                 <button
+                  type="button"
                   onClick={() => copyToClipboard("38491029482", "acc")}
-                  className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white"
+                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white touch-manipulation"
+                  aria-label="Copy Account Number"
                 >
                   {copiedKey === "acc" ? <Check className="size-4 text-[#B9F079]" /> : <Copy className="size-4" />}
                 </button>
@@ -241,8 +244,10 @@ export function DonateSection() {
                   <span className="font-mono font-bold text-sm text-white">SBIN0001234</span>
                 </div>
                 <button
+                  type="button"
                   onClick={() => copyToClipboard("SBIN0001234", "ifsc")}
-                  className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white"
+                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white touch-manipulation"
+                  aria-label="Copy IFSC Code"
                 >
                   {copiedKey === "ifsc" ? <Check className="size-4 text-[#B9F079]" /> : <Copy className="size-4" />}
                 </button>
@@ -254,8 +259,10 @@ export function DonateSection() {
                   <span className="font-mono font-bold text-sm text-[#B9F079]">tycia@sbi</span>
                 </div>
                 <button
+                  type="button"
                   onClick={() => copyToClipboard("tycia@sbi", "upi")}
-                  className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white"
+                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white touch-manipulation"
+                  aria-label="Copy UPI ID"
                 >
                   {copiedKey === "upi" ? <Check className="size-4 text-[#B9F079]" /> : <Copy className="size-4" />}
                 </button>
@@ -264,7 +271,7 @@ export function DonateSection() {
 
             <p className="text-[11px] text-white/70">
               Audited annually under the Indian Trusts Act. Email:{" "}
-              <a href="mailto:tyciafoundation@gmail.com" className="text-white font-bold underline">
+              <a href="mailto:tyciafoundation@gmail.com" className="text-white font-bold underline break-all sm:break-normal">
                 tyciafoundation@gmail.com
               </a>
             </p>

@@ -6,22 +6,22 @@ export function ImpactStories() {
     <section id="impact" className="py-14 md:py-20 bg-white border-t border-[#E2DDD2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="max-w-2xl mb-8 space-y-2">
+        <div className="max-w-2xl mb-6 sm:mb-8 space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF4E8] text-[#12560E] text-xs font-bold uppercase tracking-wider">
             Lived Realities
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#1A1C19] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1A1C19] tracking-tight">
             Verified Impact
           </h2>
-          <p className="text-sm sm:text-base text-[#5A6255]">
+          <p className="text-xs sm:text-base text-[#5A6255]">
             Real stories of restored dignity, reduced heat aggression, and reintegration livelihoods.
           </p>
         </div>
 
         {/* 3 Story Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-5">
           {/* Card 1: Rajesh */}
-          <div className="p-6 rounded-3xl bg-[#FAF9F5] border border-[#E2DDD2] flex flex-col justify-between hover:border-[#A8CCA0] transition-all shadow-xs">
+          <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#FAF9F5] border border-[#E2DDD2] flex flex-col justify-between hover:border-[#A8CCA0] transition-all shadow-xs">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#12560E] bg-white px-2 py-0.5 rounded-md border border-[#E2DDD2]">
@@ -30,7 +30,7 @@ export function ImpactStories() {
                 <Quote className="size-4 text-[#52A638]/50" />
               </div>
 
-              <h3 className="font-extrabold text-base text-[#1A1C19]">
+              <h3 className="font-extrabold text-sm sm:text-base text-[#1A1C19]">
                 From 3 Years Confinement to Agro-Supervisor
               </h3>
 
@@ -51,7 +51,7 @@ export function ImpactStories() {
           </div>
 
           {/* Card 2: Deputy Superintendent */}
-          <div className="p-6 rounded-3xl bg-[#FAF9F5] border border-[#E2DDD2] flex flex-col justify-between hover:border-[#A8CCA0] transition-all shadow-xs">
+          <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#FAF9F5] border border-[#E2DDD2] flex flex-col justify-between hover:border-[#A8CCA0] transition-all shadow-xs">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#12560E] bg-white px-2 py-0.5 rounded-md border border-[#E2DDD2]">
@@ -60,7 +60,7 @@ export function ImpactStories() {
                 <Quote className="size-4 text-[#52A638]/50" />
               </div>
 
-              <h3 className="font-extrabold text-base text-[#1A1C19]">
+              <h3 className="font-extrabold text-sm sm:text-base text-[#1A1C19]">
                 “Visibly Lowered Summer Barrack Stress”
               </h3>
 
@@ -81,7 +81,7 @@ export function ImpactStories() {
           </div>
 
           {/* Card 3: Sunita Devi */}
-          <div className="p-6 rounded-3xl bg-[#FAF9F5] border border-[#E2DDD2] flex flex-col justify-between hover:border-[#A8CCA0] transition-all shadow-xs">
+          <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#FAF9F5] border border-[#E2DDD2] flex flex-col justify-between hover:border-[#A8CCA0] transition-all shadow-xs">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#12560E] bg-white px-2 py-0.5 rounded-md border border-[#E2DDD2]">
@@ -90,7 +90,7 @@ export function ImpactStories() {
                 <Quote className="size-4 text-[#52A638]/50" />
               </div>
 
-              <h3 className="font-extrabold text-base text-[#1A1C19]">
+              <h3 className="font-extrabold text-sm sm:text-base text-[#1A1C19]">
                 Emergency Education Grant for 2 Daughters
               </h3>
 

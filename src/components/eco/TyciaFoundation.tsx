@@ -32,16 +32,16 @@ export function TyciaFoundation() {
           </div>
 
           {/* Founder Compact Block */}
-          <div className="lg:col-span-5 p-5 rounded-3xl bg-white border border-[#E2DDD2] shadow-xs space-y-3">
+          <div className="lg:col-span-5 p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-white border border-[#E2DDD2] shadow-xs space-y-3">
             <div className="flex items-center gap-3">
-              <div className="size-12 rounded-2xl bg-[#12560E] text-[#B9F079] font-black text-lg flex items-center justify-center shrink-0">
+              <div className="size-11 sm:size-12 rounded-2xl bg-[#12560E] text-[#B9F079] font-black text-base sm:text-lg flex items-center justify-center shrink-0">
                 KK
               </div>
               <div>
-                <h3 className="font-extrabold text-base text-[#1A1C19]">Karan Kumar</h3>
+                <h3 className="font-extrabold text-sm sm:text-base text-[#1A1C19]">Karan Kumar</h3>
                 <p className="text-xs font-bold text-[#12560E]">Founder, Eco-Reform & TYCIA</p>
                 <p className="text-[11px] text-[#7A8275] flex items-center gap-1">
-                  <MapPin className="size-3" /> Green Park Extension, New Delhi
+                  <MapPin className="size-3 shrink-0" /> Green Park Extension, New Delhi
                 </p>
               </div>
             </div>
@@ -50,12 +50,12 @@ export function TyciaFoundation() {
               “Extreme weather and poor infrastructure heavily impact inmates and staff. Eco-Reform creates low-cost, restorative interventions that scale.”
             </p>
 
-            <div className="flex items-center justify-between text-xs pt-1 border-t border-[#F0EDE4]">
-              <a href="mailto:Karanpsc@gmail.com" className="font-bold text-[#12560E] hover:underline flex items-center gap-1">
-                <Mail className="size-3.5" /> Karanpsc@gmail.com
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs pt-2 border-t border-[#F0EDE4]">
+              <a href="mailto:Karanpsc@gmail.com" className="font-bold text-[#12560E] hover:underline flex items-center gap-1.5 truncate">
+                <Mail className="size-3.5 shrink-0" /> <span className="truncate">Karanpsc@gmail.com</span>
               </a>
-              <a href="tel:+91880573488" className="font-semibold text-[#5A6255] hover:text-[#1A1C19] flex items-center gap-1">
-                <Phone className="size-3.5" /> +91 880573488
+              <a href="tel:+91880573488" className="font-semibold text-[#5A6255] hover:text-[#1A1C19] flex items-center gap-1.5 shrink-0">
+                <Phone className="size-3.5 shrink-0" /> +91 880573488
               </a>
             </div>
           </div>

@@ -136,3 +136,11 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

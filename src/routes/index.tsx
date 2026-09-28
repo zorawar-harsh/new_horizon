@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-[#FAF9F5] text-[#1A1C19] antialiased selection:bg-[#B9F079]/40 selection:text-[#12560E]">
+    <div className="min-h-screen bg-[#FAF9F5] text-[#1A1C19] antialiased selection:bg-[#B9F079]/40 selection:text-[#12560E] overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />
